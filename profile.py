@@ -55,7 +55,7 @@ params = pc.bindParameters()
 pc.verifyParameters()
 
 tourDescription = \
-  "This profile provides a highly-configurable SEED Lab infrastructure"
+  "Bleh"
 #
 # Setup the Tour info with the above description and instructions.
 #  
