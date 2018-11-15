@@ -31,7 +31,7 @@ sudo useradd -m -p \$6\$6Jn2hHR6/\$L6sK648eoSWwloInQpwzqG0a/eE2a1aYqTAN/zkifOkg0
 
 # add seed to sudo
 sudo usermod -a -G sudo seed
-echo "seed ALL = (root) NOPASSWD: /usr/bin/sudo" >> /etc/sudoers.d/99-emulab
+echo "%seed ALL = (root) NOPASSWD: /usr/bin/sudo" >> /etc/sudoers.d/99-emulab
 
 # auto-run jupyter when seed logs in
 sudo cat "jupyter notebook" >> /users/seed/.bash_profile
