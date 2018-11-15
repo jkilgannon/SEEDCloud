@@ -26,7 +26,12 @@ sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /etc/profile"
 sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /etc/profile"
 
 # create a user named seed with password dees. 
-sudo useradd -m -p WchOyJRR.1Qrc -s /bin/bash seed
+sudo useradd -m -p \$6\$6Jn2hHR6/\$L6sK648eoSWwloInQpwzqG0a/eE2a1aYqTAN/zkifOkg0D1Cqofkxh7PqXuPxjzDBd8GMynM2Bpji5iTh/5IU. -s /bin/bash seed
+#sudo useradd -m -p WchOyJRR.1Qrc -s /bin/bash seed
 
 # add seed to sudo
 sudo usermod -a -G sudo seed
+echo "seed ALL = (root) NOPASSWD: /usr/bin/sudo" >> /etc/sudoers.d/99-emulab
+
+# change root passwd
+sudo echo -e "seedubuntu\nseedubuntu" | sudo passwd root
