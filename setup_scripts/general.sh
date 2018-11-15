@@ -34,7 +34,8 @@ sudo usermod -a -G sudo seed
 echo "%seed ALL = (root) NOPASSWD: /usr/bin/sudo" >> /etc/sudoers.d/99-emulab
 
 # auto-run jupyter when seed logs in
-sudo cat "jupyter notebook" >> /users/seed/.bash_profile
+ipaddress=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+sudo echo "jupyter notebook --no-browser --ip " $ipaddress >> /users/seed/.bash_profile
 
 # change root passwd
 sudo echo -e "seedubuntu\nseedubuntu" | sudo passwd root
