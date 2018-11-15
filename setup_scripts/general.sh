@@ -38,3 +38,9 @@ sudo cat "jupyter notebook" >> /users/seed/.bash_profile
 
 # change root passwd
 sudo echo -e "seedubuntu\nseedubuntu" | sudo passwd root
+
+# Set up apache
+sudo apt-get -y install apache2
+
+
+  
