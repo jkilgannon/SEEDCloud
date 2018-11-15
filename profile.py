@@ -85,8 +85,8 @@ for i in range(params.studentCount + 1):
     if i == 0:
       node = Node("instructor", False)
     else:
-#      node = Node("lab_instance_"+str(i), False)
       node = Node("lab_instance_"+str(i), True)
+    #  node = Node("lab_instance_"+str(i), False)
     node.disk_image = IMAGE
     local_ip_count += 1                    
     iface = node.addInterface("if" + str(local_ip_count))
